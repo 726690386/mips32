@@ -1,3 +1,6 @@
+基于MIPS架构的简单CPU框架
+2021/1/15
+
 # TinyMIPS
 
 Implementation of TinyMIPS processor for USTB computer composition principle course design.
