@@ -2,6 +2,57 @@
 
 2021/1/15
 
+|
+├─ bus
+│  └─ AXIAdapter.v
+├─ core
+│  ├─ Core.v
+│  ├─ pipeline
+│  │  ├─ PipelineController.v
+│  │  └─ PipelineDeliver.v
+│  ├─ stage
+│  │  ├─ ex
+│  │  │  ├─ EX.v
+│  │  │  └─ EXMEM.v
+│  │  ├─ id
+│  │  │  ├─ BranchGen.v
+│  │  │  ├─ FunctGen.v
+│  │  │  ├─ ID.v
+│  │  │  ├─ IDEX.v
+│  │  │  ├─ MemGen.v
+│  │  │  ├─ OperandGen.v
+│  │  │  └─ RegGen.v
+│  │  ├─ if
+│  │  │  ├─ IFID.v
+│  │  │  └─ PC.v
+│  │  ├─ mem
+│  │  │  ├─ MEM.v
+│  │  │  └─ MEMWB.v
+│  │  └─ wb
+│  │     └─ WB.v
+│  └─ storage
+│     ├─ RegFile.v
+│     └─ RegReadProxy.v
+├─ include
+│  ├─ bus.v
+│  ├─ debug.v
+│  ├─ funct.v
+│  ├─ iobuf.v
+│  ├─ opcode.v
+│  ├─ pcdef.v
+│  ├─ segpos.v
+│  └─ sim.v
+├─ ip
+├─ mmu
+│  └─ StaticMMU.v
+├─ mycpu_top.v
+├─ README.md
+├─ sim
+│  ├─ RAM.v
+│  └─ ROM.v
+└─ TinyMIPS.v
+
+
 # TinyMIPS
 
 Implementation of TinyMIPS processor for USTB computer composition principle course design.
