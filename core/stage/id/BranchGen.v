@@ -1,8 +1,7 @@
 `timescale 1ns / 1ps
-
-`include "bus.v"
-`include "opcode.v"
-`include "funct.v"
+`include "../../../include/bus.v"
+`include "../../../include/opcode.v"
+`include "../../../include/funct.v"
 
 module BranchGen(
   input       [`ADDR_BUS]     addr,

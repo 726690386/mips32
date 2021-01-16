@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
-
-`include "bus.v"
+`include "../include/bus.v"
 
 `define HI_IN_RANGE(v, l, u)  (v[31:28] >= (l) && v[31:28] <= (u))
 

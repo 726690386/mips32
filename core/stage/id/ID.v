@@ -1,9 +1,8 @@
 `timescale 1ns / 1ps
-
-`include "bus.v"
-`include "segpos.v"
-`include "opcode.v"
-`include "funct.v"
+`include "../../../include/bus.v"
+`include "../../../include/segpos.v"
+`include "../../../include/opcode.v"
+`include "../../../include/funct.v"
 
 module ID(
   // from IF stage (PC)

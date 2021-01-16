@@ -9,4 +9,4 @@
 `define INST_MEM_SIZE         2 ** `INST_MEM_ADDR_WIDTH
 `define INST_MEM_BUS          `INST_MEM_SIZE - 1:0
 
-`endif  // TINYMIPS_SIM_V_
+`endif

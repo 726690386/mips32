@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
-
-`include "bus.v"
-`include "pcdef.v"
+`include "../../../include/bus.v"
+`include "../../../include/pcdef.v"
 
 module PC(
   input                       clk,

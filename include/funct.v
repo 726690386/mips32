@@ -28,4 +28,4 @@
 // but we can't make sure it won't be used in a future version
 `define FUNCT_NOP       6'b111111
 
-`endif  // TINYMIPS_FUNCT_V_
+`endif

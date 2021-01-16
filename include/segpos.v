@@ -19,4 +19,4 @@
 // funct
 `define SEG_FUNCT    5:0
 
-`endif  // TINYMIPS_SEGPOS_V_
+`endif

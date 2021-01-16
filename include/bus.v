@@ -33,4 +33,4 @@
 `define MEM_SEL_BUS             3:0
 `define MEM_SEL_BUS_WIDTH       4
 
-`endif  // TINYMIPS_BUS_V_
+`endif

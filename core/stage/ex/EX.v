@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
-
-`include "bus.v"
-`include "funct.v"
+`include "../../../include/bus.v"
+`include "../../../include/funct.v"
 
 module EX(
   // from ID stage

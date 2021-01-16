@@ -9,4 +9,4 @@
   `define DEBUG
 `endif
 
-`endif  // TINYMIPS_DEBUG_V_
+`endif

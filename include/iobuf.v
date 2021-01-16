@@ -1,6 +1,3 @@
-// from https://github.com/trivialmips/nontrivial-mips
-// modified by: MaxXing, 2019-11
-
 `ifndef TINYMIPS_IOBUF_V_
 `define TINYMIPS_IOBUF_V_
 
@@ -32,4 +29,4 @@
 
 `define IOBUF_GEN_VEC_SIMPLE(BITS, IN) `IOBUF_GEN_VEC(BITS, IN, IN)
 
-`endif  // TINYMIPS_IOBUF_V_
+`endif

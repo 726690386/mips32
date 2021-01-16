@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
-
-`include "bus.v"
-`include "debug.v"
+`include "include/bus.v"
+`include "include/debug.v"
 
 module TinyMIPS(
   input                   clk,

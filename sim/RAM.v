@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
-
-`include "bus.v"
-`include "sim.v"
+`include "../include/bus.v"
+`include "../include/sim.v"
 
 module RAM(
   input                       clk,

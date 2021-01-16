@@ -1,7 +1,5 @@
 `timescale 1ns / 1ps
-
-`include "bus.v"
-
+`include "../include/bus.v"
 module Core(
   input                   clk,
   input                   rst,
