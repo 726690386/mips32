@@ -11,7 +11,7 @@ module ROM(
   input       [`DATA_BUS]     rom_write_data,
   output  reg [`DATA_BUS]     rom_read_data
 );
-
+  //`INST_MEM_BUS 1023:0    ROM总大小8*1KB
   reg[7:0] inst_mem[`INST_MEM_BUS];
 
   // initialize with program

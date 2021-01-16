@@ -11,7 +11,7 @@ module RAM(
   output  reg [`DATA_BUS]     ram_read_data
 );
 
-  reg[7:0] data_mem0[`DATA_MEM_BUS];
+  reg[7:0] data_mem0[`DATA_MEM_BUS];   //256KB=4*64
   reg[7:0] data_mem1[`DATA_MEM_BUS];
   reg[7:0] data_mem2[`DATA_MEM_BUS];
   reg[7:0] data_mem3[`DATA_MEM_BUS];
