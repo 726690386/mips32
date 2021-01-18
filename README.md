@@ -1,9 +1,13 @@
 # 基于MIPS架构的简单CPU框架
 
+使用方法：
+1. git clone https://github.com/726690386/mips32.git
+2. 将CPU模块导入vivado工程
+
 2021/1/15
 
 
-# TinyMIPS
+## TinyMIPS
 
 Implementation of TinyMIPS processor for USTB computer composition principle course design.
 
@@ -11,28 +15,77 @@ Implementation of TinyMIPS processor for USTB computer composition principle cou
 
 | OpCode  | Description |
 | ------- | ----------- |
-| ADDU    | N/A         |
-| ADDIU   | N/A         |
-| SUBU    | N/A         |
-| SLT     | N/A         |
-| SLTU    | N/A         |
-| AND     | N/A         |
-| LUI     | N/A         |
-| OR      | N/A         |
-| XOR     | N/A         |
-| SLL     | N/A         |
-| SLLV    | N/A         |
-| SRAV    | N/A         |
-| SRLV    | N/A         |
-| BEQ     | N/A         |
-| BNE     | N/A         |
-| JAL     | N/A         |
-| JALR    | N/A         |
-| LB      | N/A         |
-| LBU     | N/A         |
-| LW      | N/A         |
-| SB      | N/A         |
-| SW      | N/A         |
+| 算术运算指令           |
+| ADD     |             |
+| ADDI    |             |
+| ADDU    | √           |
+| ADDIU   | √           |
+| SUB     |             |
+| SUBU    | √           |
+| SLT     | √           |
+| SLTI    |             |
+| SLTU    | √           |
+| SLTIU   |             |
+| DIV     |             |
+| DIVU    |             |
+| MULT    |             |
+| MULTU   |             |
+| ------- | ----------- |
+| 逻辑运算指令           |
+| AND     | √           |
+| ANDI    |             |
+| LUI     | √           |
+| NOR     |             |
+| OR      | √           |
+| XOR     | √           |
+| XORI    |             |
+| ------- | ----------- |
+| 移位指令               |
+| SLLV    | √           |
+| SLL     | √           |
+| SRAV    | √           |
+| SRA     |             |
+| SRLV    | √           |
+| SRL     |             |
+| ------- | ----------- |
+| 分支跳转指令           |
+| BEQ     | √           |
+| BNE     | √           |
+| BGEZ    |             |
+| BGTZ    |             |
+| BLEZ    |             |
+| BLTZ    |             |
+| BGEZAL  |             |
+| BLTZAL  |             |
+| J       |             |
+| JAL     | √           |
+| JR      |             |
+| JALR    | √           |
+| ------- | ----------- |
+| 数据移动指令           |
+| MFHI    |             |
+| MFLD    |             |
+| MTHI    |             |
+| MTLD    |             |
+| ------- | ----------- |
+| 自陷指令               |
+| BREAK   |             |
+| SYSCALL |             |
+| ------- | ----------- |
+| 访存指令               |
+| LB      | √           |
+| LBU     | √           |
+| LH      |             |
+| LHU     |             |
+| LW      | √           |
+| SB      | √           |
+| SH      |             |
+| SW      | √           |
+| ------- | ----------- |
+| 特权指令               |
+| ERET    |             |
+| MFCD    |             |
+| MTCD    |             |
 
 With no exceptions/interrupts supported.
 
