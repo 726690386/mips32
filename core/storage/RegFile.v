@@ -39,7 +39,7 @@ module RegFile(
       read_data_1 <= 0;
     end
     else if (read_addr_1 == write_addr && write_en && read_en_1) begin
-      // forward data to output
+      //数据前端处理：forward data to output
       read_data_1 <= write_data;
     end
     else if (read_en_1) begin
@@ -56,7 +56,7 @@ module RegFile(
       read_data_2 <= 0;
     end
     else if (read_addr_2 == write_addr && write_en && read_en_2) begin
-      // forward data to output
+      //数据前端处理：forward data to output
       read_data_2 <= write_data;
     end
     else if (read_en_2) begin
