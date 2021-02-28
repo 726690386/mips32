@@ -66,7 +66,7 @@ module EX(
   always @(*) begin
     case (funct)
       // jump with link & logic
-      `FUNCT_JALR, `FUNCT_OR: result <= operand_1 | operand_2;
+      `FUNCT_JALR, `FUNCT_OR: result <= operand_1 | operand_2;  //扩展指令JR
       `FUNCT_AND: result <= operand_1 & operand_2;
       `FUNCT_XOR: result <= operand_1 ^ operand_2;
       // comparison

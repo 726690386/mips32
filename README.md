@@ -60,7 +60,7 @@ Implementation of TinyMIPS processor for USTB computer composition principle cou
 | BLTZAL  |             |
 | J       |             |
 | JAL     | √           |
-| JR      |             |
+| JR      |(√)          |
 | JALR    | √           |
 | ------- | ----------- |
 | 数据移动指令           |

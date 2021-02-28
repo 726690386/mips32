@@ -25,7 +25,7 @@ module BranchGen(
         branch_addr <= {addr_plus_4[31:28], jump_addr, 2'b00};
       end
       `OP_SPECIAL: begin
-        if (funct == `FUNCT_JALR) begin
+        if (funct == `FUNCT_JALR || funct == `FUNCT_JR) begin   //扩展指令JR
           branch_flag <= 1;
           branch_addr <= reg_data_1;
         end

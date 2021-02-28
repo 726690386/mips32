@@ -9,6 +9,7 @@
 //`define FUNCT_SRA       6'b000011
 
 // jump
+`define FUNCT_JR        6'b001000  //扩展指令JR
 `define FUNCT_JALR      6'b001001
 
 // arithmetic

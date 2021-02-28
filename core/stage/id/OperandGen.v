@@ -19,6 +19,7 @@ module OperandGen(
 
   // extract immediate from instruction
   wire[`DATA_BUS] zero_ext_imm_hi = {imm, 16'b0};
+  wire[`DATA_BUS] zero_ext_imm = {16'b0, imm};
   wire[`DATA_BUS] sign_ext_imm = {{16{imm[15]}}, imm};
 
   // generate operand_1
@@ -46,7 +47,7 @@ module OperandGen(
   // generate operand_2
   always @(*) begin
     case (op)
-      `OP_LUI,`OP_ANDI,`OP_ORI,`OP_XORI: begin  //指令扩展ANDI ORI XORI
+      `OP_LUI: begin
         operand_2 <= zero_ext_imm_hi;
       end
       // arithmetic & logic (immediate)
@@ -55,6 +56,9 @@ module OperandGen(
       `OP_LB, `OP_LW, `OP_LBU, `OP_LH, `OP_LHU, 
       `OP_SB, `OP_SH, `OP_SW: begin  //扩展指令LH、LHU、SH
         operand_2 <= sign_ext_imm;
+      end
+      `OP_ANDI,`OP_ORI,`OP_XORI: begin  //指令扩展ANDI ORI XORI
+        operand_2 <= zero_ext_imm;
       end
       `OP_SPECIAL: begin
         operand_2 <= reg_data_2;

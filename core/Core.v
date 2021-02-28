@@ -317,6 +317,33 @@ module Core(
     .debug_pc_addr_out  (debug_pc_addr)
   );
 
+  wire [`DATA_BUS] hilo_hi, hilo_lo;
+
+  HILO  u_HILO (
+    .clk                     (clk),
+    .rst                     (rst),
+    .write_en                (wb_hilo_write_en),
+    .hi_i                    (wb_hi),
+    .lo_i                    (wb_lo),
+
+    .hi_o                    (hilo_hi),
+    .lo_o                    (hilo_lo)
+  );
+
+
+  HILOReadProxy  u_HILOReadProxy (
+    .hi_i                    (hilo_hi),
+    .lo_i                    (hilo_lo),
+    .mem_hilo_write_en       (mem_hilo_write_en),
+    .mem_hi_i                (mem_hi),
+    .mem_lo_i                (mem_lo),
+    .wb_hilo_write_en        (wb_hilo_write_en),
+    .wb_hi_i                 (wb_hi),
+    .wb_lo_i                 (wb_lo),
+
+    .hi_o                    (hilo_rp_hi),
+    .lo_o                    (hilo_rp_lo)
+  );
 
   // register file
   wire[`DATA_BUS] regfile_read_data_1, regfile_read_data_2;
