@@ -54,6 +54,26 @@ module BranchGen(
           branch_addr <= 0;
         end
       end
+      `OP_BLTZ: begin  //扩展指令BLTZ
+        if ($signed(reg_data_1) < $signed(0)) begin
+          branch_flag <= 1;
+          branch_addr <= addr_plus_4 + sign_ext_imm_sll2;
+        end
+        else begin
+          branch_flag <= 0;
+          branch_addr <= 0;
+        end
+      end
+      `OP_BLEZ: begin  //扩展指令BLEZ
+        if ($signed(reg_data_1) <= $signed(0)) begin
+          branch_flag <= 1;
+          branch_addr <= addr_plus_4 + sign_ext_imm_sll2;
+        end
+        else begin
+          branch_flag <= 0;
+          branch_addr <= 0;
+        end
+      end
       default: begin
         branch_flag <= 0;
         branch_addr <= 0;

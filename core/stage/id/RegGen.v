@@ -19,18 +19,18 @@ module RegGen(
   always @(*) begin
     case (op)
       // arithmetic & logic (immediate)
-      `OP_ADDIU,
+      `OP_ADDIU, `OP_ANDI, `OP_ORI, `OP_XORI,  //指令扩展ANDI、ORI、XORI 
       // memory accessing
-      `OP_LB, `OP_LW, `OP_LBU: begin
+      `OP_LB, `OP_LH, `OP_LW, `OP_LBU, `OP_LHU: begin  //扩展指令LH、LHU
         reg_read_en_1 <= 1;
         reg_read_en_2 <= 0;
         reg_addr_1 <= rs;
         reg_addr_2 <= 0;
       end
       // branch
-      `OP_BEQ, `OP_BNE,
+      `OP_BEQ, `OP_BNE, `OP_BLTZ, `OP_BLEZ,  //扩展指令BLTZ、BLEZ
       // memory accessing
-      `OP_SB, `OP_SW,
+      `OP_SB, `OP_SH, `OP_SW,  //扩展指令SH
       // r-type
       `OP_SPECIAL: begin
         reg_read_en_1 <= 1;
@@ -51,7 +51,7 @@ module RegGen(
   always @(*) begin
     case (op)
       // immediate
-      `OP_ADDIU, `OP_LUI: begin
+      `OP_ADDIU, `OP_ANDI, `OP_ORI, `OP_XORI,`OP_LUI: begin  //指令扩展ANDI、ORI、XORI 
         reg_write_en <= 1;
         reg_write_addr <= rt;
       end
@@ -63,7 +63,7 @@ module RegGen(
         reg_write_en <= 1;
         reg_write_addr <= 31;   // $ra (return address)
       end
-      `OP_LB, `OP_LBU, `OP_LW: begin
+      `OP_LB, `OP_LBU, `OP_LH, `OP_LHU, `OP_LW: begin //扩展指令LH、LHU
         reg_write_en <= 1;
         reg_write_addr <= rt;
       end

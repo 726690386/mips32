@@ -33,28 +33,29 @@ Implementation of TinyMIPS processor for USTB computer composition principle cou
 | ------- | ----------- |
 | 逻辑运算指令           |
 | AND     | √           |
-| ANDI    |             |
+| ANDI    | 27 √        |
 | LUI     | √           |
-| NOR     |             |
+| NOR     | 28          |
 | OR      | √           |
+| ORI     | 29 √        |
 | XOR     | √           |
-| XORI    |             |
+| XORI    | 31 √        |
 | ------- | ----------- |
 | 移位指令               |
 | SLLV    | √           |
 | SLL     | √           |
 | SRAV    | √           |
-| SRA     |             |
+| SRA     | 33          |
 | SRLV    | √           |
-| SRL     |             |
+| SRL     | 35          |
 | ------- | ----------- |
 | 分支跳转指令           |
 | BEQ     | √           |
 | BNE     | √           |
 | BGEZ    |             |
 | BGTZ    |             |
-| BLEZ    |             |
-| BLTZ    |             |
+| BLEZ    |(√)          |
+| BLTZ    |(√)          |
 | BGEZAL  |             |
 | BLTZAL  |             |
 | J       |             |
@@ -64,9 +65,9 @@ Implementation of TinyMIPS processor for USTB computer composition principle cou
 | ------- | ----------- |
 | 数据移动指令           |
 | MFHI    |             |
-| MFLD    |             |
+| MFLO    |             |
 | MTHI    |             |
-| MTLD    |             |
+| MTLO    |             |
 | ------- | ----------- |
 | 自陷指令               |
 | BREAK   |             |
@@ -75,17 +76,17 @@ Implementation of TinyMIPS processor for USTB computer composition principle cou
 | 访存指令               |
 | LB      | √           |
 | LBU     | √           |
-| LH      |             |
-| LHU     |             |
+| LH      |(√)          |
+| LHU     |(√)          |
 | LW      | √           |
 | SB      | √           |
-| SH      |             |
+| SH      |(√)          |
 | SW      | √           |
 | ------- | ----------- |
 | 特权指令               |
 | ERET    |             |
-| MFCD    |             |
-| MTCD    |             |
+| MFC0    |             |（协处理器）
+| MTC0    |             |（协处理器）
 
 With no exceptions/interrupts supported.
 

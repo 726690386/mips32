@@ -25,9 +25,10 @@ module OperandGen(
   always @(*) begin
     case (op)
       // immediate
-      `OP_ADDIU, `OP_LUI,
+      `OP_ADDIU, `OP_LUI,`OP_ANDI,`OP_ORI,`OP_XORI, //指令扩展ANDI ORI XORI
       // memory accessing
-      `OP_LB, `OP_LW, `OP_LBU, `OP_SB, `OP_SW: begin
+      `OP_LB, `OP_LW, `OP_LBU, `OP_LH, `OP_LHU,
+      `OP_SB, `OP_SH,`OP_SW: begin //扩展指令LH、LHU、SH
         operand_1 <= reg_data_1;
       end
       `OP_SPECIAL: begin
@@ -45,13 +46,14 @@ module OperandGen(
   // generate operand_2
   always @(*) begin
     case (op)
-      `OP_LUI: begin
+      `OP_LUI,`OP_ANDI,`OP_ORI,`OP_XORI: begin  //指令扩展ANDI ORI XORI
         operand_2 <= zero_ext_imm_hi;
       end
       // arithmetic & logic (immediate)
       `OP_ADDIU,
       // memory accessing
-      `OP_LB, `OP_LW, `OP_LBU, `OP_SB, `OP_SW: begin
+      `OP_LB, `OP_LW, `OP_LBU, `OP_LH, `OP_LHU, 
+      `OP_SB, `OP_SH, `OP_SW: begin  //扩展指令LH、LHU、SH
         operand_2 <= sign_ext_imm;
       end
       `OP_SPECIAL: begin

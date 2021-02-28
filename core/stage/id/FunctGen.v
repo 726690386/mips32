@@ -13,10 +13,12 @@ module FunctGen(
   always @(*) begin
     case (op)
       `OP_SPECIAL: funct <= funct_in;
-      `OP_LUI: funct <= `FUNCT_OR;
-      `OP_LB, `OP_LBU, `OP_LW,
-      `OP_SB, `OP_SW, `OP_ADDIU: funct <= `FUNCT_ADDU;
+      `OP_LUI, `OP_ORI: funct <= `FUNCT_OR; //扩展指令ORI
+      `OP_LB, `OP_LBU,`OP_LH, `OP_LHU, `OP_LW, //扩展指令LH、LHU、SH
+      `OP_SB, `OP_SH, `OP_SW, `OP_ADDIU: funct <= `FUNCT_ADDU;
       `OP_JAL: funct <= `FUNCT_OR;
+      `OP_ANDI: funct <= `FUNCT_AND;  //扩展指令ANDI
+      `OP_XORI: funct <= `FUNCT_XOR;  //扩展指令XORI
       default: funct <= `FUNCT_NOP;
     endcase
   end
