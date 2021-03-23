@@ -16,6 +16,15 @@
 `define FUNCT_ADDU      6'b100001
 `define FUNCT_SUBU      6'b100011
 
+//扩展指令MFHI、MTHI、MFLO、MTLO
+`define FUNCT_MFHI      6'b010000
+`define FUNCT_MTHI      6'b010001
+`define FUNCT_MFLO      6'b010010
+`define FUNCT_MTLO      6'b010011
+//扩展指令 SYSCALL、BREAK
+`define FUNCT_SYSCALL   6'b001100
+`define FUNCT_BREAK     6'b001101
+
 // logic
 `define FUNCT_AND       6'b100100
 `define FUNCT_OR        6'b100101
